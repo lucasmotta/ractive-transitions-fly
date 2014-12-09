@@ -63,9 +63,8 @@
 	var fly, addPx, defaults;
 
 	defaults = {
-		duration: 400,
-		easing: 'easeOut',
-		opacity: 0,
+		duration: 800,
+		easing: 'cubic-bezier(0.770, 0.000, 0.175, 1.000)',
 		x: -500,
 		y: 0
 	};
@@ -87,13 +86,12 @@
 		y = addPx( params.y );
 
 		offscreen = {
-			transform: 'translate(' + x + ',' + y + ')',
-			opacity: 0
+			transform: 'translate(' + x + ',' + y + ')'
 		};
 
 		if ( t.isIntro ) {
 			// animate to the current style
-			target = t.getStyle([ 'opacity', 'transform' ]);
+			target = t.getStyle([ 'transform' ]);
 
 			// set offscreen style
 			t.setStyle( offscreen );
